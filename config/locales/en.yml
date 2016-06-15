@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  title_base: "Ruby on Rails Tutorial Sample App"
+  new: "News"
+  the: "The"
+  tutorials: "The Ruby on Rails Tutorial"
+  by: "by"
+  dn: "DN"
+  new: "News"
+  about: "About"
+  contact: "Contact"
+  project1: "Project 1"
+  home: "Home"
+  help: "Help"
