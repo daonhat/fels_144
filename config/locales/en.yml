@@ -42,3 +42,8 @@ en:
   create: "Create my account"
   error : "error"
   welcome: "Welcome to the Project1!"
+  profile_updated: "Profile updated"
+  edit_user: "Edit user"
+  update_profile: "Update your profile"
+  save_change: "Save changes"
+  user_fails: "User not exist"
