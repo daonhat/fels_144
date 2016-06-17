@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
 
+  def index
+    @users = User.paginate page: params[:page]
+  end
+
   def show
     
   end

@@ -155,3 +155,31 @@ input {
   text-align: center;
   img { width: 100% }
 }
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+    img{
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+.dn-all-users {
+  border : 1px solid #e5e5e5;
+  background-color: #fff;
+  width: 600px;
+  margin: 0 auto;
+  .pagination{
+    padding-left: calc(50% - 155px);
+  }
+  .users{
+  }
+}
