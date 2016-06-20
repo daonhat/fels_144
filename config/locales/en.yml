@@ -57,3 +57,8 @@ en:
   setting: "Settings"
   users: "All users"
   account: "Account"
+  delete: "delete"
+  destroy_sucess: "User deleted"
+  sure: "You sure?"
+  delete_fail: "User's not available"
+  delete_self: "Can't delete your self"
