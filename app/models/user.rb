@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
     foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :following, through: :active_relationships, source: :followed
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
+  has_attached_file :avatar, styles: {medium: "300x300>", thumb: "30x30>"},
     default_url: "avatar/missing.png"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment :avatar,
-    content_type: { content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]},
-    size: { in: 0..2048.kilobytes }
+    content_type: {content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]},
+    size: {in: 0..2048.kilobytes}
   validates :email, presence: true, length: {maximum: 235},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :name, presence: true, length: {maximum: 50}
@@ -24,6 +24,18 @@ class User < ActiveRecord::Base
   before_save :downcase_email
   has_secure_password
 
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+  
   private
   def downcase_email
     self.email = email.downcase

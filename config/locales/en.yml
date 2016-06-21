@@ -62,3 +62,13 @@ en:
   sure: "You sure?"
   delete_fail: "User's not available"
   delete_self: "Can't delete your self"
+  plese_login: "Please log in."
+  followed_reload: "Followed, Plese reload page!!"
+  no_unfollowed_reload: "No UnFollowed, Plese reload page!!"
+  view_my_profile: "view my profile"
+  follow: "Follow"
+  unfollow: "Unfollow"
+
+  follow_user:
+    following: "following"
+    followers: "followers"
