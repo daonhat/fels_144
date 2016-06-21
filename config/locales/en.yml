@@ -68,6 +68,15 @@ en:
   view_my_profile: "view my profile"
   follow: "Follow"
   unfollow: "Unfollow"
+  new_category: "Create category"
+  title: "Title"
+  description: "Description"
+  created_category: "Created category"
+  all_categories: "All categories"
+  time_type: "%d/%m/%Y"
+  create_category: "Create new category"
+  compose_title_new_category: "Compose title new category..."
+  compose_description_new_category: "Compose description new category..."
 
   follow_user:
     following: "following"

@@ -1,0 +1,21 @@
+<% provide :title, t(:all_categories) %>
+<h1><%= t :all_categories %></h1>
+<div class="panel-body">
+  <table class="table">
+    <thead>
+      <th><%= t "category.title" %></th>
+      <th><%= t "category.description" %></th>
+      <th><%= t "category.created_at" %></th>
+      <th><%= t "category_id.update_at" %></th>
+    </thead>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+        <td><%= category.description %></td>
+        <td><%= category.created_at.strftime t(:time_type) %></td>
+        <td><%= category.updated_at.strftime t(:time_type) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<%= will_paginate %>
