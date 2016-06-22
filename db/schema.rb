@@ -77,9 +77,9 @@ ActiveRecord::Schema.define(version: 20160615055815) do
   create_table "word_answers", force: :cascade do |t|
     t.string   "content"
     t.integer  "word_id"
-    t.boolean  "is_correct"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "is_correct", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "word_answers", ["word_id"], name: "index_word_answers_on_word_id"

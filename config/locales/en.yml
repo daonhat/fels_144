@@ -39,7 +39,7 @@ en:
   email: "Email"
   pass: "Password"
   passconfirm: "Confirmation"
-  create: "Create my account"
+  create: "Create"
   error : "error"
   welcome: "Welcome to the Project1!"
   profile_updated: "Profile updated"
@@ -77,6 +77,10 @@ en:
   create_category: "Create new category"
   compose_title_new_category: "Compose title new category..."
   compose_description_new_category: "Compose description new category..."
+  must_check: "You have to check the correct answer!"
+  created_word: "Word Created"
+  is_correct: "Is Correct?"
+  answer: "Answer"
 
   follow_user:
     following: "following"
