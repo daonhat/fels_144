@@ -81,6 +81,11 @@ en:
   created_word: "Word Created"
   is_correct: "Is Correct?"
   answer: "Answer"
+  category_updated: "Category updated"
+  edit_category: "Edit category"
+  update_category: "Update category"
+  edit: "Edit"
+  category_fails: "Category not exist"
 
   follow_user:
     following: "following"

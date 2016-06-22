@@ -7,6 +7,7 @@
       <th><%= t "category.description" %></th>
       <th><%= t "category.created_at" %></th>
       <th><%= t "category_id.update_at" %></th>
+      <th class="action" width="150">Action</th>
     </thead>
     <% @categories.each do |category| %>
       <tr>
@@ -14,6 +15,12 @@
         <td><%= category.description %></td>
         <td><%= category.created_at.strftime t(:time_type) %></td>
         <td><%= category.updated_at.strftime t(:time_type) %></td>
+        <td class="dn-action-padding">
+          <%= link_to t(:edit), edit_admin_category_path(category),
+            class: "btn btn-primary" %>
+          <%= link_to t(:delete), [:admin, category], method: :delete, data: {confirm: t(:sure)},
+            class: "btn btn-danger btn-primary" %>
+        </td>
       </tr>
     <% end %>
   </table>
