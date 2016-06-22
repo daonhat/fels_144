@@ -20,4 +20,8 @@ module WordsHelper
     tmpl = tmpl.gsub /(?<!\n)\n(?!\n)/, " "
     "<script> var #{options[:template]} = '#{tmpl.to_s}' </script>".html_safe
 	end
+
+  def word_answer_class word_answer
+    word_answer.is_correct? ? "correct_answer" : "well"
+  end
 end

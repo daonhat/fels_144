@@ -58,7 +58,7 @@ en:
   users: "All users"
   account: "Account"
   delete: "delete"
-  destroy_sucess: "User deleted"
+  destroy_sucess: "Delete Successfully!!"
   sure: "You sure?"
   delete_fail: "User's not available"
   delete_self: "Can't delete your self"
@@ -88,7 +88,12 @@ en:
   category_fails: "Category not exist"
   new_answer: "Add new answer"
   remove: "Remove this answer"
-  
+  word_fails: "Word not found"
+  all_words: "All Words"
+  word: "Word"
+  category: "Category"
+  action: "Action"
+
   follow_user:
     following: "following"
     followers: "followers"
