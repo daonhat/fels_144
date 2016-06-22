@@ -1,6 +1,10 @@
-<p>
+<p class="removable">
   <%= f.label :content, t(:answer) %>
   <%= f.text_field :content %>
-  <%= f.check_box :is_correct, class: "chb" %>
-  <span><%= t :is_correct %></span>
+  <%= f.label :is_correct, class: "checkbox inline" do %>
+    <%= f.check_box :is_correct, class: "chb" %>
+    <span><%= t :is_correct %></span>
+  <% end %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to t(:remove), "#", class: "remover_link"  %>
 </p>

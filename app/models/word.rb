@@ -7,7 +7,7 @@ class Word < ActiveRecord::Base
   validate :check_answers
 
   accepts_nested_attributes_for :word_answers,
-    reject_if: lambda {|a| a[:content].blank?}
+    reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
 
   private
   def check_answers
