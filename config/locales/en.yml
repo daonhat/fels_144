@@ -86,7 +86,9 @@ en:
   update_category: "Update category"
   edit: "Edit"
   category_fails: "Category not exist"
-
+  new_answer: "Add new answer"
+  remove: "Remove this answer"
+  
   follow_user:
     following: "following"
     followers: "followers"
