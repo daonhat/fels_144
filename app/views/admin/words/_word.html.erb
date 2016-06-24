@@ -4,7 +4,7 @@
   <td><%= word.created_at.strftime t(:time_type) %></td>
   <td><%= word.updated_at.strftime t(:time_type) %></td>
   <td class="dn-action-padding">
-    <%= link_to t(:edit), "#", class: "btn btn-primary" %>
+    <%= link_to t(:edit), edit_admin_word_path(word), class: "btn btn-primary" %>
     <%= link_to t(:delete), [:admin, word], method: :delete, data: {confirm: t(:sure)},
       class: "btn btn-danger btn-primary" %>
   </td>
