@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 20160615055815) do
   create_table "results", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "word_id"
-    t.integer  "wordanswer_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "word_answer_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "results", ["lesson_id"], name: "index_results_on_lesson_id"
+  add_index "results", ["word_answer_id"], name: "index_results_on_word_answer_id"
   add_index "results", ["word_id"], name: "index_results_on_word_id"
-  add_index "results", ["wordanswer_id"], name: "index_results_on_wordanswer_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

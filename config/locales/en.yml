@@ -106,7 +106,12 @@ en:
   no_word_in_category: "There is nothing in this category"
   fillter: "Fillter"
   search: "Search"
-
+  submit: "Submit"
+  lesson_success: "You have done the test !!"
+  lesson_fails: "An error occur when saving the result."
+  limit_times: "The lesson will submit in"
+  minutes: "minutes"
+  
   follow_user:
     following: "following"
     followers: "followers"
