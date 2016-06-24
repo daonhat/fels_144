@@ -1,6 +1,6 @@
 class Admin::WordsController < ApplicationController
   before_action :require_admin
-  before_action :find_word, only: [:show, :destroy]
+  before_action :find_word, except: [:index, :new, :create]
 
   def index
     @words = Word.paginate page: params[:page]
@@ -26,6 +26,18 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @word.update_attributes word_params
+      flash[:success] = t :word_updated
+      redirect_to admin_word_path @word
+    else
+      render :edit
+   end
+  end
+
   def destroy
     @word.destroy
     flash[:success] = t :destroy_sucess
@@ -35,7 +47,7 @@ class Admin::WordsController < ApplicationController
   private
   def word_params
     params.require(:word).permit :content, :category_id,
-      word_answers_attributes: [:content, :is_correct, :_destroy]
+      word_answers_attributes: [:id, :content, :is_correct, :_destroy]
   end
   def find_word
     @word = Word.find_by_id params[:id]

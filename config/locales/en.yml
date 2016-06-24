@@ -93,7 +93,8 @@ en:
   word: "Word"
   category: "Category"
   action: "Action"
-
+  word_updated: "Word updated"
+  edit_word: "Edit Word"
   follow_user:
     following: "following"
     followers: "followers"

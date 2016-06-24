@@ -1,8 +1,5 @@
 $(document).ready(function(){
-  $('.chb').change(function(){
-    $('.chb').prop('checked', false);
-    $(this).prop('checked', true);
-  });
+  checkbox_tick();
 
   $('.add_answer').click(function() {
     var association = $(this).attr('data-association');
@@ -11,6 +8,7 @@ $(document).ready(function(){
     var new_id = new Date().getTime();
     var Dest = (target == '') ? $(this).parent() : $('#'+target);
     Dest.append(window[association+'_fields'].replace(regexp, new_id));
+    checkbox_tick();
     return false;
   });
 
@@ -19,3 +17,9 @@ $(document).ready(function(){
     $(this).closest('.removable').hide();
   });
 })
+
+function checkbox_tick() {
+    $('.chb').on("change", function(){
+    $('.chb').not(this).prop('checked', false);
+  });
+}
