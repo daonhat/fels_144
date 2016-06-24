@@ -95,6 +95,20 @@ en:
   action: "Action"
   word_updated: "Word updated"
   edit_word: "Edit Word"
+  start_lesson: "Start lesson"
+  category: "Category"
+  total_word: "Total word"
+  lesson_not_create: "Lesson can't not create"
+  lesson: "Lesson"
+  check_number_of_word: "Category not enough word, Please wait we will add word"
+  created_lesson: "Created Lesson"
+  lesson_fails: "Lesson not exist"
+
   follow_user:
     following: "following"
     followers: "followers"
+  Category:
+    title: "Title"
+    description: "Description"
+    created_at: "Created at"
+    updated_at: "Updated at"
