@@ -227,3 +227,8 @@ input {
 .dn-action-padding{
   padding-top: 2px;
 }
+
+.correct_answer{
+  @extend .well;
+  background-color: #aeaeae
+}

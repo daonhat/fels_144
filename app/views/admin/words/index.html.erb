@@ -1,0 +1,15 @@
+<% provide :title, t(:all_words) %>
+<h1><%= t :all_words %></h1>
+<div class="panel-body">
+  <table class="table">
+    <thead>
+      <th><%= t "word.content" %></th>
+      <th><%= t "word.category" %></th>
+      <th><%= t "word.created_at" %></th>
+      <th><%= t "word.update_at" %></th>
+      <th class="action" width=<%= Settings.th_width %>><%= t :action %></th>
+    </thead>
+    <%= render @words %>
+  </table>
+</div>
+<%= will_paginate %>
