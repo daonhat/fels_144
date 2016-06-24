@@ -1,0 +1,19 @@
+<h1><%= t :lesson %></h1>
+<div class="row">
+  <aside class="col-md-4">
+    <div>
+      <%= image_tag current_user.avatar.url :medium  %>
+      <strong class="text-capitalize"><%= current_user.name %></strong>
+    </div>
+  </aside>
+  <div class = "col-md-6">
+    <p>
+      <b><%= t :category %></b>
+      <%= @lesson.category.title %>
+    </p>
+    <p>
+      <b><%= t :total_word %></b>
+      <%= @lesson.results.size %> <%= t :words %>
+    </p>
+  </div>
+</div>
