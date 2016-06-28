@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
     else
       flash[:danger] = t :lesson_fails
     end
-    redirect_to categories_path
+    redirect_to lesson_path @lesson
   end
 
   private

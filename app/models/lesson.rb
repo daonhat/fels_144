@@ -11,6 +11,10 @@ class Lesson < ActiveRecord::Base
 
   accepts_nested_attributes_for :results
 
+  def done?
+    results.select {|result| result.word_answer_id.present?}.any?
+  end
+
   private
   def list_words
     category.words.order("RANDOM()").limit Settings.number_word
