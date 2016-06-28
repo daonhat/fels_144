@@ -111,6 +111,8 @@ en:
   lesson_fails: "An error occur when saving the result."
   limit_times: "The lesson will submit in"
   minutes: "minutes"
+  your_answer: "Your answer"
+  words: "Words"
   
   follow_user:
     following: "following"

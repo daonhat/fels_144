@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <th><%= t :result %></th>
+    <th><%= t :words %></th>
+    <th><%= t :your_answer %></th>
+  </thead>
+  <tbody>
+    <% @lesson.results.each do |result| %>
+      <tr class=<%= result_class result %>>
+        <td><%= answer_icon result %></td>
+        <td><%= result.word.content %></td>
+        <td><%= result.word_answer.present? ? 
+          result.word_answer.content : "" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
