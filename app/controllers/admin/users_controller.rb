@@ -1,9 +1,10 @@
 class Admin::UsersController < ApplicationController
+  layout "admin/application"
   before_action :require_admin
   before_action :find_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.paginate(page: params[:page]).per_page Settings.page_size
   end
 
   def edit

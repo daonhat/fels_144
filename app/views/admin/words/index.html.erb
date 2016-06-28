@@ -1,11 +1,14 @@
 <% provide :title, t(:all_words) %>
 <h1><%= t :all_words %></h1>
 
-<%= form_tag admin_words_path, method: :get do %>
+<%= form_tag admin_words_path, method: :get, class: "dn-admin-cate-form" do %>
   <%= label_tag :category %>
   <%= select_tag :category, options_from_collection_for_select(@categories, "id", "title"),
-    include_blank: true, class: "btn btn-default dropdown-toggle" %>
-  <%= submit_tag t("search"), class: "btn btn-primary" %>
+    include_blank: true, class: "btn btn-default dn-admin-cate-select" %>
+  <button class="btn" type="submit">
+    <span class="fa fa-search"></span>
+  </button>
+  <%= link_to t(:create), new_admin_word_path, class: "btn btn-primary pull-right btn-sm" %>
 <% end %>
 
 <div class="panel-body">

@@ -1,10 +1,11 @@
 <%= form_for [:admin, @word] do |f| %>
-  <div class="fields">
+  <div class="fields dn-cate-new">
+    <%= f.label :category, class: "dn-admin-word-label" %>
     <%= f.select :category_id,
       @categories.collect {|category| [category.title, category.id]} %>
     <p>
       <%= f.label :content %><br />
-      <%= f.text_field :content, class: "form-control" %>
+      <%= f.text_field :content, class: "form-control dn-admin-word-content" %>
     </p>
     <div id="word_answers">
       <%= f.fields_for :word_answers do |builder| %>
@@ -13,6 +14,6 @@
     </div>
     <%= add_answer_link t(:new_answer), :word_answers, "word_answers" %>
     <%= new_fields_template f, :word_answers %>
-    <p><%= f.submit t(:create) %></p>
+    <p><%= f.submit t(:create), class: "btn btn-primary dn-admin-word-btn" %></p>
   </div>
 <% end %>

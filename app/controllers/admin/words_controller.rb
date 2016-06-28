@@ -1,4 +1,5 @@
 class Admin::WordsController < ApplicationController
+  layout "admin/application"
   before_action :require_admin
   before_action :find_word, except: [:index, :new, :create]
 

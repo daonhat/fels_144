@@ -1,9 +1,10 @@
 class Admin::CategoriesController < ApplicationController
+  layout "admin/application"
   before_action :require_admin
   before_action :find_category, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.paginate page: params[:page]
+    @categories = Category.paginate(page: params[:page]).per_page Settings.page_size
   end
 
   def new

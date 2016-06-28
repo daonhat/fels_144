@@ -1,5 +1,12 @@
+var checkbox_tick = function() {
+  $('.chb').on('change', function(){
+  $('.chb').not(this).prop('checked', false);
+  });
+};                                   
+$(document).ready(checkbox_tick);            
+$(document).on('page:load', checkbox_tick);
+
 $(document).ready(function(){
-  checkbox_tick();
 
   $('.add_answer').click(function() {
     var association = $(this).attr('data-association');
@@ -17,12 +24,6 @@ $(document).ready(function(){
     $(this).closest('.removable').hide();
   });
 })
-
-function checkbox_tick() {
-    $('.chb').on('change', function(){
-    $('.chb').not(this).prop('checked', false);
-  });
-}
 
 function timeOut(){
   $('.edit_lesson').submit();
