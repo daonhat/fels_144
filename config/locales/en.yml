@@ -113,6 +113,8 @@ en:
   minutes: "minutes"
   your_answer: "Your answer"
   words: "Words"
+  ago: "ago."
+  activities: "Activities"
   
   follow_user:
     following: "following"
@@ -127,3 +129,8 @@ en:
     category: "Category"
     created_at: "Created at"
     updated_at: "Updated at"
+  activity:
+    login: " had logged in!!"
+    logout: " had logged out!!"
+    following: " following "
+    learned: " had learned some word in "

@@ -14,4 +14,13 @@
   <div class="col-md-8">
     <%= render "follow_form" if logged_in? %>
   </div>
+  <div class="col-md-8">
+    <% if @activities.any? %>
+      <h3> <%= t :activities %> (<%= @activities.count %>)</h3>
+      <ul class="activities">
+        <%= render @activities %>
+      </ul>
+      <%= will_paginate @activities %>
+    <% end %>
+  </div>
 </div>

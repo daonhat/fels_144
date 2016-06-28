@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 
   def follow other_user
     active_relationships.create followed_id: other_user.id
+    create_activity "following", other_user.id
   end
 
   def unfollow other_user
@@ -35,7 +36,11 @@ class User < ActiveRecord::Base
   def following? other_user
     following.include? other_user
   end
-  
+
+  def create_activity action_type, target_id = nil
+    activities.create action_type: action_type, target_id: target_id
+  end
+
   private
   def downcase_email
     self.email = email.downcase
