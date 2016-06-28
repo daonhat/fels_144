@@ -2,8 +2,14 @@ class Admin::WordsController < ApplicationController
   before_action :require_admin
   before_action :find_word, except: [:index, :new, :create]
 
+  helper_method :sort_column, :sort_direction
+
   def index
-    @words = Word.paginate page: params[:page]
+    @categories = Category.all
+    @words = Word.all
+    @words = @words.category(params[:category]) if params[:category].present?
+    @words = @words.order(sort_column + " " + sort_direction)
+      .paginate(page: params[:page]).per_page Settings.page_size
   end
   
   def show
@@ -49,11 +55,20 @@ class Admin::WordsController < ApplicationController
     params.require(:word).permit :content, :category_id,
       word_answers_attributes: [:id, :content, :is_correct, :_destroy]
   end
+  
   def find_word
     @word = Word.find_by_id params[:id]
     if @word.nil?
       flash[:danger] = t :word_fails
       redirect_to admin_words_path
     end
+  end
+
+  def sort_column
+    Word.column_names.include?(params[:sort]) ? params[:sort] : "content"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

@@ -1,0 +1,25 @@
+<% provide :title, t(:all_words) %>
+<h1><%= t :all_words %></h1>
+
+<%= form_tag words_path, method: :get do %>
+  <%= select_tag :category_id, options_from_collection_for_select(@categories,
+    :id, :title, params[:category_id]), include_blank: true %>
+
+  <% Settings["fillter_types"].each do |type|%>
+    <ul>
+      <%= radio_button_tag :word_type, type, params[:word_type] == type %>
+      <%= label_tag type %>
+    </ul>
+  <% end %>
+
+  <%= submit_tag t("fillter"), class: "btn btn-primary" %>
+<% end %>
+
+<% if @words.blank? %>
+  <p><i><b><%= t :no_word_in_category %></b></i></p>
+<% else %>
+  <% @words.each do |word| %>
+    <li><%= word.content %></li>
+  <% end %>
+  <%= will_paginate %>
+<% end %>

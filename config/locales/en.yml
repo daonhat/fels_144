@@ -103,6 +103,9 @@ en:
   check_number_of_word: "Category not enough word, Please wait we will add word"
   created_lesson: "Created Lesson"
   lesson_fails: "Lesson not exist"
+  no_word_in_category: "There is nothing in this category"
+  fillter: "Fillter"
+  search: "Search"
 
   follow_user:
     following: "following"
@@ -110,5 +113,10 @@ en:
   Category:
     title: "Title"
     description: "Description"
+    created_at: "Created at"
+    updated_at: "Updated at"
+  word:
+    content: "Content"
+    category: "Category"
     created_at: "Created at"
     updated_at: "Updated at"

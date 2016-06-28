@@ -1,15 +1,27 @@
 <% provide :title, t(:all_words) %>
 <h1><%= t :all_words %></h1>
+
+<%= form_tag admin_words_path, method: :get do %>
+  <%= label_tag :category %>
+  <%= select_tag :category, options_from_collection_for_select(@categories, "id", "title"),
+    include_blank: true, class: "btn btn-default dropdown-toggle" %>
+  <%= submit_tag t("search"), class: "btn btn-primary" %>
+<% end %>
+
 <div class="panel-body">
-  <table class="table">
+  <table class="table pretty">
     <thead>
-      <th><%= t "word.content" %></th>
-      <th><%= t "word.category" %></th>
+      <th><%= sortable t "word.content" %></th>
+      <th><%= sortable t "word.category" %></th>
       <th><%= t "word.created_at" %></th>
       <th><%= t "word.update_at" %></th>
       <th class="action" width=<%= Settings.th_width %>><%= t :action %></th>
     </thead>
-    <%= render @words %>
+    <% if @words.blank? %>
+      <td><i><b><%= t :no_word_in_category %></b></i></td>
+    <% else %>
+      <%= render @words %>
+    <% end %>
   </table>
 </div>
 <%= will_paginate %>
