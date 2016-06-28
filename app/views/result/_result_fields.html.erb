@@ -1,0 +1,13 @@
+</br>
+<hr />
+<li>
+  <h5 class="well"><%= f.object.word.content %></h5>
+  <ol>	
+    <% f.object.word.word_answers.each do |answer| %>
+      <li class="well">
+        <%= answer.content %>
+        <%= f.radio_button :word_answer_id, answer.id %>
+      </li>
+    <% end %>
+  </ol>
+</li>

@@ -1,4 +1,4 @@
 class WordAnswer < ActiveRecord::Base
   belongs_to :word
-  belongs_to :result
+  has_many :results
 end

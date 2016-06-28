@@ -9,6 +9,7 @@ class Lesson < ActiveRecord::Base
 
   validate :check_number_of_word, on: :create
 
+  accepts_nested_attributes_for :results
 
   private
   def list_words

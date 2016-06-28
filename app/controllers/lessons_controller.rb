@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user, only: [:show, :create]
-  before_action :find_lesson, only: :show
+  before_action :find_lesson, only: [:show, :update]
 
   def show   
   end
@@ -16,9 +16,19 @@ class LessonsController < ApplicationController
     end
   end
 
+  def update
+    if @lesson.update_attributes lesson_params
+      flash[:success] = t :lesson_success
+    else
+      flash[:danger] = t :lesson_fails
+    end
+    redirect_to categories_path
+  end
+
   private
   def lesson_params
-    params.require(:lesson).permit :category_id
+    params.require(:lesson).permit :category_id,
+      results_attributes: [:id, :word_answer_id]
   end
 
   def find_lesson

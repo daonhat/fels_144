@@ -15,5 +15,14 @@
       <b><%= t :total_word %></b>
       <%= @lesson.results.size %> <%= t :words %>
     </p>
+    <div><%= t :limit_times %> <span id="time"></span> <%= t :minutes %></div>
+    <ol>
+      <%= form_for @lesson do |f| %>
+        <%= f.fields_for :results do |result| %>
+          <%= render "result/result_fields", f: result %>
+        <% end %>
+        <%= f.submit t(:submit), class: "btn btn-primary" %>
+      <% end %>
+    </ol>
   </div>
 </div>
