@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield(:title) %></title>
+    <%= stylesheet_link_tag "application",
+      media: "all","data-turbolinks-track": true %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": true %>
+    <%= csrf_meta_tags %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+      <%= render "layouts/admin/header" %>
+      <%= render "layouts/admin/sidebar" %>
+
+      <div class="content-wrapper dn-content">
+        <section class="content">
+          <%= yield %>
+        </section>
+      </div>
+      <%= render "layouts/admin/footer" %>
+      <div class="control-sidebar-bg"></div>
+    </div>
+  </body>
+</html>

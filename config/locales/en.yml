@@ -115,7 +115,9 @@ en:
   words: "Words"
   ago: "ago."
   activities: "Activities"
-  
+  more_info: "More info"
+  user: "User"
+
   follow_user:
     following: "following"
     followers: "followers"
@@ -134,3 +136,14 @@ en:
     logout: " had logged out!!"
     following: " following "
     learned: " had learned some word in "
+  admin:
+    project1: "PROJECT1"
+    p1: "P1"
+    dashbord: "Dashboard"
+    category: "Category"
+    word: "Word"
+    index: "Index"
+    create: "Create"
+    footer: "Project 1 - Practice Framgia - E-learning - ND "
+    user_register: "User Registrations"
+    word_in_web: "Word in Website"
