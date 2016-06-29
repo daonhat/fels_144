@@ -1,10 +1,16 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin/application"
   before_action :require_admin
-  before_action :find_category, only: [:edit, :update, :destroy]
+  before_action :find_category, except: [:index, :new, :create]
 
   def index
     @categories = Category.paginate(page: params[:page]).per_page Settings.page_size
+  end
+
+  def show
+    @words = @category.words
+    @words = @words.order("content " + sort_direction).
+      paginate(page: params[:page]).per_page Settings.page_size
   end
 
   def new
@@ -49,5 +55,9 @@ class Admin::CategoriesController < ApplicationController
       flash[:danger] = t :category_fails
       redirect_to admin_categories_path
     end
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

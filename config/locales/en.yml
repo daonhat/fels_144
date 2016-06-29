@@ -122,6 +122,8 @@ en:
   create: "Create"
   new_word: "New word"
   check_true: "Plese check true answer"
+  login_fails: "Invalid email/password conbination"
+  category: "Category"
 
   follow_user:
     following: "following"

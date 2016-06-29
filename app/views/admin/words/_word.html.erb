@@ -1,6 +1,7 @@
 <tr>
   <td><%= link_to word.content, admin_word_path(word) %></td>
-  <td><%= word.category.title %></td>
+  <td><%= link_to word.category.title,
+    admin_category_path(word.category) %></td>
   <td><%= word.created_at.strftime t(:time_type) %></td>
   <td><%= word.updated_at.strftime t(:time_type) %></td>
   <td class="dn-action-padding">
