@@ -1,10 +1,13 @@
-<p class="removable">
+<ul class="removable col-md-6">
   <%= f.label :content, t(:answer) %>
-  <%= f.text_field :content %>
-  <%= f.label :is_correct, class: "checkbox inline" do %>
-    <%= f.check_box :is_correct, class: "chb" %>
-    <span><%= t :is_correct %></span>
-  <% end %>
+  <li class="input-group">
+    <span class="input-group-addon dn-admin-addon">
+      <%= f.label :is_correct, class: "checkbox inline dn-admin-word-check" do %>
+        <%= f.check_box :is_correct, class: "chb dn-admin-wordanswer-check" %>
+      <% end %>
+    </span>
+    <%= f.text_field :content, class: "form-control", placeholder: I18n.t(:check_true) %>
+  </li>
   <%= f.hidden_field :_destroy %>
   <%= link_to t(:remove), "#", class: "remover_link"  %>
-</p>
+</ul>

@@ -1,8 +1,7 @@
-<% provide :title, t(:word) %>
+<% provide :title, t(:show_word) %>
 <div class="word">
-  <h1><%= t :word %></h1>
-  <h4><%= t :category %>: <%= link_to @word.category.title, "#" %></h4>
-  <h5 class="well"><%= @word.content %></h5>
+  <h4><b><%= t :category %>: <%= @word.category.title %></b></h4>
+  <h1><%= @word.content %></h1>
   <div class="answers_field">
     <ul>
       <%= render @word.word_answers %>

@@ -1,18 +1,34 @@
 <% provide :title, t(:all_users) %>
-<div class="dn-all-users">
-  <h1><%= t :all_users %></h1>
-  <%= will_paginate %>
-  <ul class="users">
-    <% @users.each do |user| %>
-      <li>
-        <%= image_tag user.avatar.url :medium %>
-        <%= link_to user.name, user %>
-        <% unless current_user?(user) %>
-          <%= link_to t(:delete), [:admin, user], method: :delete, data: {confirm: t(:sure)} %>
-        <% end %>
-        <%= link_to t(:setting), edit_admin_user_path(user) %>
-      </li>
-    <% end %>
-  </ul>
-  <%= will_paginate %>
+<h1><%= t :all_users %></h1>
+<div class="panel-body">
+  <table class="table">
+    <thead>
+      <th><%= t "user.avatar" %></th>
+      <th><%= t "user.name" %></th>
+      <th><%= t "user.email" %></th>
+      <th><%= t "user.created_at" %></th>
+      <th><%= t "user.update_at" %></th>
+      <th class="action"><%= t :action %></th>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= image_tag user.avatar.url, class: "dn-admin-user-image" %></td>
+          <td><%= link_to user.name, user %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at.strftime t(:time_type) %></td>
+          <td><%= user.updated_at.strftime t(:time_type) %></td>
+          <td class="dn-action-padding">
+            <%= link_to t(:edit), edit_admin_user_path(user),
+              class: "btn btn-primary" %>
+            <% unless current_user?(user) %>
+              <%= link_to t(:delete), [:admin, user], method: :delete,
+                data: {confirm: t(:sure)}, class: "btn btn-danger btn-primary" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
+<%= will_paginate %>
