@@ -7,3 +7,6 @@ fillter_types:
   - "not_learn"
 not_learn: "not_learn"
 learned: "learned"
+filter:
+  - "asc"
+  - "desc"

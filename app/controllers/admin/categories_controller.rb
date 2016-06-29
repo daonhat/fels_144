@@ -58,6 +58,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    Settings.filter.include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
