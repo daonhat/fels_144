@@ -1,25 +1,36 @@
 <% provide :title, t(:all_words) %>
-<h1><%= t :all_words %></h1>
+<div class="row dn-front-group">
+  <h1><%= t :all_words %></h1>
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_tag words_path, method: :get, 
+      class: "dn-admin-cate-form dn-front-cate-form" do %>
+      <span><b><%= t :category %></b></span>
+      <%= select_tag :category_id,
+        options_from_collection_for_select(@categories,:id, :title,
+        params[:category_id]),include_blank: true,
+        class: "btn btn-default dn-admin-cate-select" %>
 
-<%= form_tag words_path, method: :get do %>
-  <%= select_tag :category_id, options_from_collection_for_select(@categories,
-    :id, :title, params[:category_id]), include_blank: true %>
+      <% Settings["fillter_types"].each do |type| %>
+        <ul class="input-group dn-front-word-filter">
+          <%= radio_button_tag :word_type, type, params[:word_type] == type %>
+          <%= label_tag type %>
+        </ul>
+      <% end %>
 
-  <% Settings["fillter_types"].each do |type|%>
-    <ul>
-      <%= radio_button_tag :word_type, type, params[:word_type] == type %>
-      <%= label_tag type %>
-    </ul>
-  <% end %>
-
-  <%= submit_tag t("fillter"), class: "btn btn-primary" %>
-<% end %>
-
-<% if @words.blank? %>
-  <p><i><b><%= t :no_word_in_category %></b></i></p>
-<% else %>
-  <% @words.each do |word| %>
-    <li><%= word.content %></li>
-  <% end %>
-  <%= will_paginate %>
-<% end %>
+    <button class="btn btn-sm" type="submit">
+      <i class="glyphicon glyphicon-search"></i>
+    </button>
+    <div class="clearfix"></div>
+    <% end %>
+  </div>
+  <div class= "col-md-8 col-md-offset-2">
+    <% if @words.blank? %>
+      <p><i><b><%= t :no_word_in_category %></b></i></p>
+    <% else %>
+      <% @words.each_with_index do |word, index| %>
+        <li><%= index + 1 %>. <%= word.content %></li>
+      <% end %>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>

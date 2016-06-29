@@ -31,7 +31,7 @@ en:
   about: "About"
   contact: "Contact"
   project1: "Project 1"
-  home: "Home"
+  home: "HOME"
   help: "Help"
   theform: "The form contains"
   signup: "Sign up"
@@ -53,8 +53,8 @@ en:
   sign_up_now: "Sign Up Now!"
   newuser?: "New user ?"
   close: "Close"
-  profile: "Profile"
-  setting: "Settings"
+  profile: "Timelines"
+  setting: "Update profile"
   users: "All users"
   account: "Account"
   delete: "delete"
@@ -124,6 +124,11 @@ en:
   check_true: "Plese check true answer"
   login_fails: "Invalid email/password conbination"
   category: "Category"
+  elearning: "E-LEARNING"
+  word_list: WORD LIST
+  lesson_list: "LESSON"
+  category_list: "CATEGORY"
+  admin_dash: "Admin dashboard"
 
   follow_user:
     following: "following"

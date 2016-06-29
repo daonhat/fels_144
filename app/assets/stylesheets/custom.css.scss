@@ -4,6 +4,11 @@
 /* universal */
 
 body {
+  background-color: #E9E9E9;
+}
+ 
+li{
+  list-style: none;
 }
 
 section {
@@ -467,4 +472,81 @@ html,body{min-height:100%}.layout-boxed html,.layout-boxed body{height:100%}body
 }
 .action{
   width: 150px;
+}
+
+.dn-image-user{
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+.dn-front-content{
+  margin-top: 50px;
+  min-height: 562px!important;
+}
+
+.navbar-nav>li>a:hover{
+  background-color: #fff!important;
+  color: white!important;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: #fff!important;
+}
+
+.navbar-inverse .navbar-nav > li:hover a{
+  color: #211F5E !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a{
+  background-color: #fff!important;
+}
+
+.dn-front-cate-form {
+  span{
+    width: 150px;
+    display: block;
+    margin-bottom: 15px;
+ }
+ select{
+   float: left;
+ }
+ ul{
+   float: left;
+   label{
+    width: auto!important;
+   }
+ }
+ button{
+   background-color: #4F81BD;
+   margin-left: 30px;
+ }
+}
+.dn-front-group{
+  font-size: 16px !important;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 15px
+}
+
+.dn-front-user-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.dn-form-control{
+  border-radius: 4px!important;
+}
+
+.dn-front-user-btn{
+  width: 35%;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 15px;
 }
