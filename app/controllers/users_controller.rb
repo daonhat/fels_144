@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @activities = @user.activities.order_by_time.paginate page: params[:page]
   end
 
   def new
