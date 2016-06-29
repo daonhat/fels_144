@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to root_url if logged_in?
   end
 
   def create
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
       current_user.create_activity "login"
       redirect_to user
     else
+      flash.now[:danger] = t :login_fails
       render :new
     end
   end

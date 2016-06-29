@@ -1,0 +1,20 @@
+<% provide :title, t(:category) %>
+<h1><%= t :category %></h1>
+
+<div class="panel-body">
+  <table class="table pretty">
+    <thead>
+      <th><%= sortable t "word.content" %></th>
+      <th><%= t "word.category" %></th>
+      <th><%= t "word.created_at" %></th>
+      <th><%= t "word.update_at" %></th>
+      <th class="action" width=<%= Settings.th_width %>><%= t :action %></th>
+    </thead>
+    <% if @words.blank? %>
+      <td><i><b><%= t :no_word_in_category %></b></i></td>
+    <% else %>
+      <%= render @words %>
+    <% end %>
+  </table>
+</div>
+<%= will_paginate @words %>
