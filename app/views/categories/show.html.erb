@@ -1,0 +1,23 @@
+<% provide :title, t(:category) %>
+<h1><%= t :category %></h1>
+
+<div class="panel-body">
+  <%= form_for @category.lessons.build do |f| %>
+    <%= f.hidden_field :category_id, value: @category.id %>
+    <%= f.submit t(:start_lesson), class: "btn btn-primary" %>
+  <% end %>
+  <table class="table pretty">
+    <thead>
+      <th><%= sortable t "word.content" %></th>
+      <th><%= t "word.category" %></th>
+      <th><%= t "word.created_at" %></th>
+      <th><%= t "word.update_at" %></th>
+    </thead>
+    <% if @words.blank? %>
+      <td><i><b><%= t :no_word_in_category %></b></i></td>
+    <% else %>
+      <%= render @words %>
+    <% end %>
+  </table>
+</div>
+<%= will_paginate @words %>
