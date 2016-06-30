@@ -1,13 +1,13 @@
 </br>
 <hr />
-<li>
+<li class="dn-margin-question">
   <h5 class="well"><%= f.object.word.content %></h5>
-  <ol>	
+  <ul>	
     <% f.object.word.word_answers.each do |answer| %>
-      <li class="well">
+      <li class="well col-md-6">
         <%= answer.content %>
         <%= f.radio_button :word_answer_id, answer.id %>
       </li>
     <% end %>
-  </ol>
+  </ul>
 </li>

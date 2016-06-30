@@ -1,12 +1,14 @@
-<h1><%= t :lesson %></h1>
-<div class="row">
-  <aside class="col-md-4">
-    <div>
-      <%= image_tag current_user.avatar.url :medium  %>
-      <strong class="text-capitalize"><%= current_user.name %></strong>
+<div class="dn-front-group">
+  <h1><%= t :lesson %></h1>
+  <div class="row">
+    <aside class="col-md-4">
+      <div>
+        <%= image_tag current_user.avatar.url, class: "dn-lesson-img" %>
+        <strong class="text-capitalize dn-text-lesson"><%= current_user.name %></strong>
+      </div>
+    </aside>
+    <div class = "col-md-6">
+      <%= @lesson.done? ? render("show_result") : render("do_test") %>
     </div>
-  </aside>
-  <div class = "col-md-6">
-    <%= @lesson.done? ? render("show_result") : render("do_test") %>
   </div>
 </div>

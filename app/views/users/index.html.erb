@@ -1,8 +1,7 @@
 <% provide(:title, t(:all_users)) %>
-<div class="dn-all-users">
+<div class="dn-front-group col-md-8 col-md-offset-2 dn-front-all-users">
 <h1><%= t :all_users %></h1>
 
-<%= will_paginate %>
 <ul class="users">
   <%= render @users %>
 </ul>

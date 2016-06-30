@@ -1,9 +1,29 @@
 <% provide :title, @user.name %>
+<div class="fluid-container dn-photo-border-content">
+  <div class="dn-photo-cover">
+    <% if logged_in? %>
+      <div class="dn-photo-cover-content-user">
+        <%= image_tag current_user.avatar.url, class: "dn-front-home-img" %>
+        <div class="dn-cover-title">
+          <div class="dn-title-content">
+            <h1><%= link_to @user.name, user_path(@user) %></h1>
+            <%= render "follow_form" if logged_in? %>
+            <%= render "shared/stats" %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="dn-front-home-btn">      
+        <%= link_to t(:login), login_path, class: "btn dn-btn-login" %>
+        <%= link_to t(:signup), login_path, class: "btn dn-btn-signup" %> 
+      </div>
+      <div class="dn-photo-cover-content"></div>
+    <% end %>
+    <div class="dn-cover-full"></div>
+  </div>
+</div>
 <div class="row">
   <%= render "user_info", user: @user %>
-  <div class="col-md-8">
-    <%= render "follow_form" if logged_in? %>
-  </div>
   <div class="col-md-8">
     <% if @activities.any? %>
       <h3> <%= t :activities %> (<%= @activities.count %>)</h3>
