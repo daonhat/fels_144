@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    @feed_items = Activity.feed(current_user.following_ids, current_user.id).
-      order_by_time.paginate page: params[:page] if logged_in?
+    @feed_items = Activity.feed(current_user.following_ids, current_user.id)
+      .order_by_time.paginate(page: params[:page]).per_page Settings.page_size if logged_in?
   end
 
   def help
