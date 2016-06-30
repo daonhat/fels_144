@@ -1,0 +1,33 @@
+<% provide :title, t(:lesson) %>
+<div class="dn-front-group">
+  <h1><%= t :lesson %></h1>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <th><%= t "lesson" %></th>
+        <th><%= t "category.created_at" %></th>
+        <th><%= t "category_id.update_at" %></th>
+      </thead>
+      <tbody>
+        <% @lessons.each_with_index do |lesson,index| %>
+          <tr>
+            <td><%= "lesson" %>.<%= index + 1 %></td>
+            <td><%= lesson.created_at.strftime t(:time_type) %></td>
+            <td><%= lesson.updated_at.strftime t(:time_type) %></td>
+            <td class="text-center">
+              <%= form_for lesson, url: lesson_path(lesson), method: :get do |f| %>
+                <%= f.hidden_field :category_id, value: lesson.category_id %>
+                <% if lesson.done? %>
+                  <%= f.submit t(:show_result), class: "btn" %>
+                <% else %>
+                  <%= f.submit t(:start_lesson), class: "btn btn-primary" %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= will_paginate %>
+</div>

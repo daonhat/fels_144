@@ -22,8 +22,7 @@
     <div class="dn-cover-full"></div>
   </div>
 </div>
-<div class="row">
-  <%= render "user_info", user: @user %>
+<div class="row dn-front-group">
   <div class="col-md-8">
     <% if @activities.any? %>
       <h3> <%= t :activities %> (<%= @activities.count %>)</h3>

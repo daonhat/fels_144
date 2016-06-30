@@ -11,10 +11,11 @@ class Word < ActiveRecord::Base
     reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
 
   scope :category, ->category_id{where category_id: category_id}
-  scope :learned, ->(user_id, category_id){joins(results: :lesson)
-    .where category_id: category_id, lessons: {user_id: user_id}}
-  scope :not_learn, ->(user_id, category_id){where(category_id: category_id)
-    .where.not id: learned(user_id, category_id)}
+  scope :learned, ->(user_id){select("distinct content")
+    .joins(results: :lesson).where lessons: {user_id: user_id}}
+  scope :not_learn, ->user_id{where("id not in (select word_id from results 
+    where lesson_id in (select id from lessons where user_id = #{user_id}))")}
+  scope :all_word, ->user_id{}
 
   private
   def check_answers

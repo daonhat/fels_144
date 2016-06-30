@@ -47,7 +47,7 @@ en:
   update_profile: "Update your profile"
   save_change: "Save changes"
   user_fails: "User not exist"
-  all_users: "All users"
+  all_users: "USERS"
   login: "Log In"
   logout: "Log out"
   sign_up_now: "Sign Up Now!"
@@ -129,6 +129,7 @@ en:
   lesson_list: "LESSON"
   category_list: "CATEGORY"
   admin_dash: "Admin dashboard"
+  show_result: "Show result"
 
   follow_user:
     following: "following"

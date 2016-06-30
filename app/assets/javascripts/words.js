@@ -6,9 +6,7 @@ var checkbox_tick = function() {
 $(document).ready(checkbox_tick);            
 $(document).on('page:load', checkbox_tick);
 
-$(document).ready(function(){
-
-  $('.add_answer').click(function() {
+var add_answer = function(){$('.add_answer').click(function() {
     var association = $(this).attr('data-association');
     var target = $(this).attr('target');
     var regexp = new RegExp('new_' + association, 'g');
@@ -16,14 +14,23 @@ $(document).ready(function(){
     var Dest = (target == '') ? $(this).parent() : $('#'+target);
     Dest.append(window[association+'_fields'].replace(regexp, new_id));
     checkbox_tick();
+    remove_link();
     return false;
   });
+};
 
+$(document).ready(add_answer);            
+$(document).on('page:load', add_answer);
+
+var remove_link = function(){
   $('.remover_link').click(function(event){
     $(this).prev('input[type=hidden').val('1');
     $(this).closest('.removable').hide();
   });
-})
+};
+
+$(document).ready(remove_link);            
+$(document).on('page:load', remove_link);
 
 function timeOut(){
   $('.edit_lesson').submit();
