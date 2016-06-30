@@ -14,6 +14,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "paperclip", "~> 5.0.0.beta1"
 gem "will_paginate", "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
+gem "faker", "1.4.2"
 
 group :development, :test do
   gem "byebug"
@@ -26,6 +27,5 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
-  gem "faker", "1.4.2"
   gem "sqlite3"
 end
