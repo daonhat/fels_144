@@ -5,8 +5,10 @@ page_size: 10
 fillter_types:
   - "learned"
   - "not_learn"
+  - "all_word"
 not_learn: "not_learn"
 learned: "learned"
+all_word: "all_word"
 filter:
   - "asc"
   - "desc"

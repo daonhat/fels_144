@@ -3,18 +3,22 @@ class WordsController < ApplicationController
 
   def index
     @categories = Category.all
-    @words = if params[:category_id].nil?
+    @words = if params[:category_id].nil? ||
+      params[:category_id].empty? && params[:word_type].nil?
+      params[:word_type] = "all_word"
       Word.all
-    elsif params[:category_id].present? && params[:word_type].nil?
-      Word.category params[:category_id]
+    elsif params[:category_id].empty?
+      Word.all.send "#{type}", current_user.id
     else
-      Word.send "#{type}", current_user.id, params[:category_id]
+      category = @categories.find_by id: params[:category_id]
+      words = category.words
+      @words = words.send "#{type}", current_user.id
     end
     @words = @words.paginate(page: params[:page]).per_page Settings.page_size
   end
 
   private
   def type
-    params[:word_type] == Settings["not_learn"] ? Settings["not_learn"] : Settings["learned"]
+    params[:word_type] == Settings["not_learn"] ? Settings["not_learn"] : params[:word_type]
   end
 end

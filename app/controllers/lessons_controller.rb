@@ -2,6 +2,11 @@ class LessonsController < ApplicationController
   before_action :logged_in_user, only: [:show, :create]
   before_action :find_lesson, only: [:show, :update]
 
+  def index
+    @lessons = Lesson.where(user_id: current_user.id)
+      .paginate(page: params[:page]).per_page Settings.page_size
+  end
+
   def show   
   end
 
