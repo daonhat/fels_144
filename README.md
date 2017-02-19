@@ -1,7 +1,7 @@
 # ABOUT PROJECT
 
 This is a project 1 for trainee in Framgia Viet Nam.
-Forked from https://github.com/framgia/fels_144
+Forked from https://github.com/framgia/fels_144 .
 It's is a website learn english by multiple-choice
 
 * User
@@ -11,7 +11,7 @@ It's is a website learn english by multiple-choice
   - Can see profile
   - Can update Name, Email, Password, Avatar
   - Can see word list
-  - Can filter the list by some conditions (e.g. learned, unlearned, alphabet, category)
+  - Can filter the list by some conditions (e.g. learned, unlearned)
   - Can see which word has he already learned.
   - Can choose a course he learns from some courses.
   - Can solve the problems (by selecting)
@@ -19,7 +19,7 @@ It's is a website learn english by multiple-choice
   - Can see the progress in the lesson (e.g. "3/20")
   - Can see the result of a lesson.
 
-*Admin
+* Admin
   - Can manage all data
 
 Website is deployed at: https://protected-basin-84650.herokuapp.com
@@ -28,12 +28,12 @@ Website is deployed at: https://protected-basin-84650.herokuapp.com
   - Account admin: test@gmail.com password admin: 123456
 
 # MEMBER
-* HEDSPI K57 students of HUST VietNam. Leaded and managed by daonhat (email:daonhat@gmail.com)
+* 2 member is daonhat and trungduc . Leaded and managed by daonhat (email:daonhat@gmail.com)
 
 # INSTALL PROJECT
-* Install Ruby 2.3.1
-* Install Rails 5.0.0.1
-* Download source code and run
-+ bundle install
-+ rake db:migrate
-+ rake db:seed
+* Install Ruby
+* Install Rails 4.2.6
+* Download source code at branch develop in https://github.com/framgia/fels_144 and run
+  + bundle install
+  + rake db:migrate
+  + rake db:seed
